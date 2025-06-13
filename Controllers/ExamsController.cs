@@ -27,6 +27,12 @@ namespace BE_PhysGen.Controllers
             
             return Ok("Creating exam with ai successfully");
         }
+        [HttpPut("{id}")]
+        public IActionResult UpdateExam(int id, string classtype, string difficulty, string topic)
+        {
+            return Ok($"Updated exam with ID {id} successfully");
+        }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteExam(int id)
         {
