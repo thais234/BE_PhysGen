@@ -1,0 +1,6 @@
+@BE_PhysGen_HostAddress = http://localhost:5241
+
+GET {{BE_PhysGen_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
