@@ -1,4 +1,5 @@
-﻿using BE_PhysGen.Models;
+﻿using BE_PhysGen.Data;
+using BE_PhysGen.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +9,28 @@ namespace BE_PhysGen.Controllers
     [ApiController]
     public class ExamsController : ControllerBase
     {
+        private readonly ApplicationDbContext dbContext;
+
+        [HttpGet("{id}")]
+        public IActionResult GetExam(int id)
+        {
+            return Ok($"Exam with ID {id}, connect db soon");
+        }
+        [HttpGet("DemoExam/{classtype}")]
+        public IActionResult GetDemoExam(int classtype)
+        {
+            return Ok($"Exam with ID {classtype}, connect db soon");
+        }
         [HttpPost]
-        public IActionResult CreateExam(string difficulty, string format, string topic )
+        public IActionResult CreateExam(string classtype, string difficulty, string topic )
         {
             
             return Ok("Creating exam with ai successfully");
+        }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteExam(int id)
+        {
+            return Ok($"Deleted user with ID {id} successfully");
         }
     }
 }
