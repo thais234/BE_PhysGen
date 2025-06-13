@@ -34,4 +34,5 @@ namespace BE_PhysGen.Controllers
             return Ok($"Deleted question with ID {id} successfully");
 
         }
+    }
 }
