@@ -1,5 +1,6 @@
 ﻿using BE_PhysGen.Data;
 using BE_PhysGen.Models;
+using BE_PhysGen.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,12 +11,7 @@ namespace BE_PhysGen.Controllers
     public class UsersController : ControllerBase
     {
         private readonly ApplicationDbContext dbContext;
-        [HttpGet]
-        public IActionResult GetAllUsers()
-        {
-            return Ok("List of users, connect db soon");
-            // return Ok(dbContext.Users.ToList());
-        }
+        public readonly IUsersService _usersService;
 
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)

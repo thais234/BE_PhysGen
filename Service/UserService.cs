@@ -1,6 +1,14 @@
-﻿namespace BE_PhysGen.Service
+﻿using BE_PhysGen.Repositories;
+
+namespace BE_PhysGen.Service
 {
-    public class UserService
+    public class UserService : IUsersService
     {
+        private readonly IUserRepo _userRepo;
+        public UserService(IUserRepo userRepo)
+        {
+            _userRepo = userRepo;
+        }
+
     }
 }
